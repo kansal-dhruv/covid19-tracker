@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import {fetchData} from './api/api.js';
+import CardComponent from './components/CardComponent.jsx'
+class App extends Component{
+  constructor(){
+    super();
+    this.state={
+      df: null,
+    }
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  async componentDidMount(){
+    let df=await fetchData();
+    this.setState({df});
+
+  }
+  render(){
+    if(this.state.df==null)
+      return(<div></div>);
+    else{
+      return (
+      <div className="App">
+        <CardComponent props={this.state.df} />  
+      </div>
+    )
+      }
+};
+
 }
-
 export default App;
