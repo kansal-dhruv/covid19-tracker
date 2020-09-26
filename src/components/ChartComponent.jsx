@@ -34,12 +34,12 @@ class ChartComponent extends Component{
                     datasets: [{
                         data: this.state.data.map((dd)=>dd.totalConfirmed),
                         label:'Infected',
-                        borderColor: 'black',
+                        borderColor: 'rgba(0,0,255,0.5)',
                         fill: false,
                     },{
                         data: this.state.data.map((dd)=>dd.deaths.total),
                         label:'Deaths',
-                        borderColor: 'red',
+                        borderColor: 'rgba(255,0,0,0.5)',
                         fill: false,
                     }
                 ]
