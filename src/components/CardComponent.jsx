@@ -6,7 +6,7 @@ import './CardComponent.css'
 class CardComponent extends Component{
     render(){
             const df=this.props.props;
-            console.log(df);
+            // console.log(df);
             return(
                 <div className="container-m">
                 <Grid container spacing={3} justify='center'>

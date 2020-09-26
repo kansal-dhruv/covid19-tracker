@@ -11,7 +11,7 @@ class ChartComponent extends Component{
     }
     async componentDidMount(){
         let data=await fetchDaily();
-        console.log(data);
+        // console.log(data);
         this.setState({data});
     }
     label_create(arr){
@@ -27,7 +27,7 @@ class ChartComponent extends Component{
             return (<div></div>)
         else
         {
-            console.log(this.state.data);
+            // console.log(this.state.data);
             let chart=(
                 <Line data={{
                     labels:this.state.data.map((dd)=>dd.reportDate),
