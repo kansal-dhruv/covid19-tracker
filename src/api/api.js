@@ -8,7 +8,14 @@ export async function fetchData(){
     const conf_inc=data_co[data_co.length-1].confirmed.total;
     const death_inc=data_co[data_co.length-1].deaths.total;
     // console.log(data);
-    console.log(data_co);
+    // console.log(data_co);
     data={...data,increase_confirmed:data.confirmed.value - conf_inc,increase_deaths:data.deaths.value-death_inc};
     return data;
+}
+export async function fetchDaily(){
+    let response = await fetch(link_co);
+    let data = await response.json();
+    // console.log(data);
+    return data;
+
 }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import {fetchData} from './api/api.js';
-import CardComponent from './components/CardComponent.jsx'
+import CardComponent from './components/CardComponent.jsx';
+import ChartComponent from './components/ChartComponent.jsx';
 class App extends Component{
   constructor(){
     super();
@@ -21,7 +22,8 @@ class App extends Component{
     else{
       return (
       <div className="App">
-        <CardComponent props={this.state.df} />  
+        <CardComponent props={this.state.df} /> 
+        <ChartComponent></ChartComponent> 
       </div>
     )
       }
